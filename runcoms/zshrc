@@ -11,3 +11,28 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# VirtualEnvsWrapper
+
+if [[ -d "${ZDOTDIR:-$HOME}/.virtualenvs" ]]; then
+    export WORKON_HOME="${ZDOTDIR:-$HOME}/.virtualenvs"
+    source /usr/local/bin/virtualenvwrapper.sh
+else
+    mkdir -p "${ZDOTDIR:-$HOME}/.virtualenvs"
+    export WORKON_HOME="${ZDOTDIR:-$HOME}/.virtualenvs"
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# Aliases
+alias internet='ping google.ch'
+alias mtrg='mtr google.ch'
+alias wifi='wicd-curses'
+
+alias clone='urxvt &'
+alias ris='ristretto &'
+
+alias such='git'
+alias much='git'
+alias very='git'
+
+alias pissant='echo Mais ouais mon gars'
